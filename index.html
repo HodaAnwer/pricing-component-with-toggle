@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+  </script>
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Pricing-component-with-toggle-master</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @font-face {
+      font-family: Montserrat1;
+      src: url(Montserrat-SemiBold.ttf);
+    }
+    
+    @font-face {
+      font-family: Montserrat2;
+      src: url(Montserrat-Black.ttf);
+    }
+    
+    html,
+    body {
+      height: 100%;
+    }
+    
+    .container {
+      background-color: hsl(240, 78%, 98%);
+      /* background-image: linear-gradient(top left to bottom right, hsl(237, 63%, 64%), hsl(236, 72%, 79%)); */
+      max-width: 100%;
+      min-height: 100%;
+    }
+    
+    h3 {
+      color: hsl(228, 45%, 44%);
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    h5 {
+      padding-top: 5px;
+    }
+    
+    #checkboxDiv {
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+    
+    #topDiv {
+      display: flex;
+      justify-content: center;
+      /* justify-items: center; */
+      margin-top: 30px;
+      margin-bottom: 50px;
+      color: hsl(234, 14%, 74%);
+    }
+    
+    #mainDiv {
+      display: flex;
+      justify-content: center;
+    }
+    
+    #leftDiv,
+    #middleDiv,
+    #rightDiv {
+      width: 30%;
+      text-align: center;
+      border-radius: 10px;
+      font-family: Montserrat1;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    
+    #leftDiv,
+    #rightDiv {
+      color: hsl(232, 13%, 33%);
+      background-color: white;
+      margin-top: 20px;
+      /* height: 60%; */
+      margin-bottom: 55px;
+      padding-top: 20px;
+    }
+    
+    #middleDiv {
+      color: white;
+      background-color: hsl(237, 63%, 64%);
+      /* height: 100%; */
+      margin-bottom: 35px;
+      padding-top: 40px;
+    }
+    
+    hr {
+      width: 80%;
+      margin-left: 10%;
+    }
+    
+    #flexSwitchCheckChecked {
+      width: 60px;
+      height: 35px;
+      background-color: hsl(237, 63%, 64%);
+    }
+    
+    #flexSwitchCheckChecked:checked {
+      background-color: hsl(236, 72%, 79%);
+    }
+    /* .annuallyP {
+      display: block;
+    }
+    
+    .monthlyP {
+      display: none;
+    } */
+    
+    button {
+      width: 80%;
+      height: 50px;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom: 0px;
+      border-radius: 10px;
+    }
+    
+    #butRight,
+    #butLeft {
+      background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+      margin-bottom: 20px;
+    }
+    
+    .annuallyP,
+    .monthlyP {
+      height: 60px;
+      /* display: block; */
+      font-family: Montserrat2;
+      font-weight: 700;
+      font-size: 48px;
+    }
+    
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+    
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+        <h3> Our Pricing</h3>
+      </div>
+      <div id="topDiv">
+        <h5 id="annually">Annually</h5>
+        <div id="checkboxDiv" class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+        </div>
+        <h5 id="monthly">Monthly</h5>
+      </div>
+      <form id="form-id">
+        <div id="mainDiv" class="form-group">
+          <div id="leftDiv" class="allDiv">
+            <p>Basic</p>
+            <br>
+            <h1 class="annuallyP">&dollar;199.99</h1>
+            <h1 class="monthlyP">&dollar;19.99</h1>
+            <hr>
+            <p>500 GB Storage</p>
+            <hr>
+            <p>2 Users Allowed</p>
+            <hr>
+            <p>Send up to 3 GB</p>
+            <hr>
+            <button id="butLeft">Learn More</button>
+          </div>
+          <div id="middleDiv" class="allDiv">
+            <p>Professional</p>
+            <br>
+            <h1 class="annuallyP">&dollar;249.99</h1>
+            <h1 class="monthlyP">&dollar;24.99</h1>
+            <hr>
+            <p>1 TB Storage</p>
+            <hr>
+            <p>5 Users Allowed</p>
+            <hr>
+            <p>Send up to 10 GB</p>
+            <hr>
+            <button id="butMiddle">Learn More</button>
+
+          </div>
+          <div id="rightDiv" class="allDiv">
+            <p>Master</p>
+            <br>
+            <h1 class="annuallyP">&dollar;399.99</h1>
+            <h1 class="monthlyP">&dollar;39.99</h1>
+            <hr>
+            <p>2 TB Storage</p>
+            <hr>
+            <p>10 Users Allowed</p>
+            <hr>
+            <p> Send up to 20 GB</p>
+            <hr>
+            <button id="butRight">Learn More</button>
+
+          </div>
+        </div>
+      </form>
+
+
+    </div>
+
+  </div>
+
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Hoda Anwer</a>.
+  </div>
+</body>
+
+</html>
