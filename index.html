@@ -27,6 +27,21 @@
       src: url(Montserrat-Black.ttf);
     }
     
+    @font-face {
+      font-family: Montserrat3;
+      src: url(Montserrat-Regular.ttf);
+    }
+    
+    @font-face {
+      font-family: Montserrat4;
+      src: url(Montserrat-Medium.ttf);
+    }
+    
+    @font-face {
+      font-family: Montserrat5;
+      src: url(Montserrat-Bold.ttf);
+    }
+    
     html,
     body {
       height: 100%;
@@ -40,7 +55,6 @@
     }
     
     h3 {
-      color: hsl(228, 45%, 44%);
       text-align: center;
       margin-top: 50px;
     }
@@ -48,6 +62,9 @@
     h5 {
       padding-top: 5px;
     }
+    /* h1 {
+      padding-bottom: 13px;
+    } */
     
     #checkboxDiv {
       margin-left: 2%;
@@ -66,6 +83,7 @@
     #mainDiv {
       display: flex;
       justify-content: center;
+      /* padding-bottom: 32px; */
     }
     
     #leftDiv,
@@ -74,27 +92,26 @@
       width: 30%;
       text-align: center;
       border-radius: 10px;
-      font-family: Montserrat1;
-      font-weight: 700;
-      font-size: 12px;
     }
     
     #leftDiv,
     #rightDiv {
-      color: hsl(232, 13%, 33%);
+      color: hsl(233, 13%, 49%);
       background-color: white;
       margin-top: 20px;
       /* height: 60%; */
       margin-bottom: 55px;
-      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-top: 30px;
     }
     
     #middleDiv {
       color: white;
-      background-color: hsl(237, 63%, 64%);
+      background-image: linear-gradient(to right, hsl(236, 72%, 72%), hsl(237, 63%, 71%));
+      /* background-color: hsl(237, 63%, 64%); */
       /* height: 100%; */
       margin-bottom: 35px;
-      padding-top: 40px;
+      padding-top: 50px;
     }
     
     hr {
@@ -127,6 +144,8 @@
       border-right: 0px;
       border-bottom: 0px;
       border-radius: 10px;
+      margin-top: 32px;
+      /* margin-bottom: 32px; */
     }
     
     #butRight,
@@ -139,13 +158,82 @@
     .monthlyP {
       height: 60px;
       /* display: block; */
-      font-family: Montserrat2;
+      /* color: hsl(232, 13%, 33%); */
+    }
+    /* [FONTS FONTS] */
+    
+    h3 {
+      color: hsl(228, 45%, 44%);
+      font-family: Montserrat4;
+      font-size: 2vw;
       font-weight: 700;
-      font-size: 48px;
+    }
+    
+    .headP {
+      font-family: Montserrat5;
+      font-weight: 400;
+      font-size: 1.5vw;
+      /* color: hsl(233, 13%, 49%); */
+    }
+    
+    .annuallyP,
+    .monthlyP {
+      font-family: Montserrat5;
+      /* font-weight: 700; */
+      font-size: 5vw;
+    }
+    
+    .contentPLeft,
+    .contentPMiddle,
+    .contentPRight {
+      font-family: Montserrat5;
+      font-size: 1vw;
+    }
+    
+    #butRight,
+    #butLeft,
+    #butMiddle {
+      font-family: Montserrat5;
+      font-size: 1vw;
+      letter-spacing: 1.5px;
+    }
+    
+    span {
+      font-family: Montserrat5;
+      font-size: 2.8vw;
+      padding-right: 2.5%;
+      /* position: relative; */
+      vertical-align: 10px;
+      /* display: flex; */
+      /* justify-content: center; */
+      /* justify-items: center; */
+      /* padding-top: 30px; */
+      /* padding-bottom: 50px; */
+      /* margin-bottom: 13px; */
+    }
+    /* [COLORS] */
+    
+    .contentPLeft,
+    .contentPRight,
+    #basic,
+    #master {
+      color: hsl(233, 13%, 49%);
+    }
+    
+    .price {
+      color: hsl(232, 13%, 33%);
+    }
+    
+    #butRight,
+    #butLeft {
+      color: white;
+    }
+    
+    #butMiddle {
+      color: hsl(237, 63%, 64%);
     }
     
     .attribution {
-      font-size: 11px;
       text-align: center;
     }
     
@@ -168,54 +256,54 @@
         </div>
         <h5 id="monthly">Monthly</h5>
       </div>
-      <form id="form-id">
-        <div id="mainDiv" class="form-group">
-          <div id="leftDiv" class="allDiv">
-            <p>Basic</p>
-            <br>
-            <h1 class="annuallyP">&dollar;199.99</h1>
-            <h1 class="monthlyP">&dollar;19.99</h1>
-            <hr>
-            <p>500 GB Storage</p>
-            <hr>
-            <p>2 Users Allowed</p>
-            <hr>
-            <p>Send up to 3 GB</p>
-            <hr>
-            <button id="butLeft">Learn More</button>
-          </div>
-          <div id="middleDiv" class="allDiv">
-            <p>Professional</p>
-            <br>
-            <h1 class="annuallyP">&dollar;249.99</h1>
-            <h1 class="monthlyP">&dollar;24.99</h1>
-            <hr>
-            <p>1 TB Storage</p>
-            <hr>
-            <p>5 Users Allowed</p>
-            <hr>
-            <p>Send up to 10 GB</p>
-            <hr>
-            <button id="butMiddle">Learn More</button>
-
-          </div>
-          <div id="rightDiv" class="allDiv">
-            <p>Master</p>
-            <br>
-            <h1 class="annuallyP">&dollar;399.99</h1>
-            <h1 class="monthlyP">&dollar;39.99</h1>
-            <hr>
-            <p>2 TB Storage</p>
-            <hr>
-            <p>10 Users Allowed</p>
-            <hr>
-            <p> Send up to 20 GB</p>
-            <hr>
-            <button id="butRight">Learn More</button>
-
-          </div>
+      <!-- <form id="form-id"> -->
+      <div id="mainDiv" class="form-group">
+        <div id="leftDiv" class="allDiv">
+          <p class="headP" id="basic">Basic</p>
+          <!-- <br> -->
+          <h1 class="annuallyP price"><span> &dollar;</span>199.99</h1>
+          <h1 class="monthlyP price"><span> &dollar;</span>19.99</h1>
+          <hr>
+          <p class="contentPLeft">500 GB Storage</p>
+          <hr>
+          <p class="contentPLeft">2 Users Allowed</p>
+          <hr>
+          <p class="contentPLeft">Send up to 3 GB</p>
+          <hr>
+          <button id="butLeft">LEARN MORE</button>
         </div>
-      </form>
+        <div id="middleDiv" class="allDiv">
+          <p class="headP" id="professional">Professional</p>
+
+          <h1 class="annuallyP" id="249.99"><span> &dollar;</span>249.99</h1>
+          <h1 class="monthlyP" id="24.99"><span> &dollar;</span>24.99</h1>
+          <hr>
+          <p class="contentPMiddle">1 TB Storage</p>
+          <hr>
+          <p class="contentPMiddle">5 Users Allowed</p>
+          <hr>
+          <p class="contentPMiddle">Send up to 10 GB</p>
+          <hr>
+          <button id="butMiddle">LEARN MORE</button>
+
+        </div>
+        <div id="rightDiv" class="allDiv">
+          <p class="headP" id="master">Master</p>
+
+          <h1 class="annuallyP price" id="399.99"><span> &dollar;</span>399.99</h1>
+          <h1 class="monthlyP price" id="39.99"><span> &dollar;</span>39.99</h1>
+          <hr>
+          <p class="contentPRight">2 TB Storage</p>
+          <hr>
+          <p class="contentPRight">10 Users Allowed</p>
+          <hr>
+          <p class="contentPRight"> Send up to 20 GB</p>
+          <hr>
+          <button id="butRight">LEARN MORE</button>
+
+        </div>
+      </div>
+      <!-- </form> -->
 
 
     </div>
