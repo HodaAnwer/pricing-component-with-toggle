@@ -14,24 +14,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Pricing-component-with-toggle-master</title>
-
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    @font-face {
-      font-family: Montserrat1;
-      src: url(Montserrat-SemiBold.ttf);
-    }
-    
-    @font-face {
-      font-family: Montserrat2;
-      src: url(Montserrat-Black.ttf);
-    }
-    
-    @font-face {
-      font-family: Montserrat3;
-      src: url(Montserrat-Regular.ttf);
-    }
-    
     @font-face {
       font-family: Montserrat4;
       src: url(Montserrat-Medium.ttf);
@@ -49,7 +33,6 @@
     
     .container {
       background-color: hsl(240, 78%, 98%);
-      /* background-image: linear-gradient(top left to bottom right, hsl(237, 63%, 64%), hsl(236, 72%, 79%)); */
       max-width: 100%;
       min-height: 100%;
     }
@@ -62,9 +45,6 @@
     h5 {
       padding-top: 5px;
     }
-    /* h1 {
-      padding-bottom: 13px;
-    } */
     
     #checkboxDiv {
       margin-left: 2%;
@@ -74,44 +54,22 @@
     #topDiv {
       display: flex;
       justify-content: center;
-      /* justify-items: center; */
       margin-top: 30px;
       margin-bottom: 50px;
       color: hsl(234, 14%, 74%);
-    }
-    
-    #mainDiv {
-      display: flex;
-      justify-content: center;
-      /* padding-bottom: 32px; */
-    }
-    
-    #leftDiv,
-    #middleDiv,
-    #rightDiv {
-      width: 30%;
-      text-align: center;
-      border-radius: 10px;
     }
     
     #leftDiv,
     #rightDiv {
       color: hsl(233, 13%, 49%);
       background-color: white;
-      margin-top: 20px;
-      /* height: 60%; */
-      margin-bottom: 55px;
-      padding-bottom: 20px;
-      padding-top: 30px;
     }
     
     #middleDiv {
       color: white;
       background-image: linear-gradient(to right, hsl(236, 72%, 72%), hsl(237, 63%, 71%));
-      /* background-color: hsl(237, 63%, 64%); */
-      /* height: 100%; */
-      margin-bottom: 35px;
       padding-top: 50px;
+      border-radius: 10px;
     }
     
     hr {
@@ -120,21 +78,18 @@
     }
     
     #flexSwitchCheckChecked {
-      width: 60px;
-      height: 35px;
-      background-color: hsl(237, 63%, 64%);
-    }
-    
-    #flexSwitchCheckChecked:checked {
+      border: none;
       background-color: hsl(236, 72%, 79%);
-    }
-    /* .annuallyP {
-      display: block;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e");
     }
     
-    .monthlyP {
-      display: none;
-    } */
+    #flexSwitchCheckChecked:active {
+      background-color: hsl(234, 14%, 74%);
+    }
+    
+    #flexSwitchCheckChecked:focus {
+      box-shadow: none;
+    }
     
     button {
       width: 80%;
@@ -145,7 +100,6 @@
       border-bottom: 0px;
       border-radius: 10px;
       margin-top: 32px;
-      /* margin-bottom: 32px; */
     }
     
     #butRight,
@@ -157,59 +111,13 @@
     .annuallyP,
     .monthlyP {
       height: 60px;
-      /* display: block; */
-      /* color: hsl(232, 13%, 33%); */
     }
     /* [FONTS FONTS] */
     
     h3 {
       color: hsl(228, 45%, 44%);
       font-family: Montserrat4;
-      font-size: 2vw;
       font-weight: 700;
-    }
-    
-    .headP {
-      font-family: Montserrat5;
-      font-weight: 400;
-      font-size: 1.5vw;
-      /* color: hsl(233, 13%, 49%); */
-    }
-    
-    .annuallyP,
-    .monthlyP {
-      font-family: Montserrat5;
-      /* font-weight: 700; */
-      font-size: 5vw;
-    }
-    
-    .contentPLeft,
-    .contentPMiddle,
-    .contentPRight {
-      font-family: Montserrat5;
-      font-size: 1vw;
-    }
-    
-    #butRight,
-    #butLeft,
-    #butMiddle {
-      font-family: Montserrat5;
-      font-size: 1vw;
-      letter-spacing: 1.5px;
-    }
-    
-    span {
-      font-family: Montserrat5;
-      font-size: 2.8vw;
-      padding-right: 2.5%;
-      /* position: relative; */
-      vertical-align: 10px;
-      /* display: flex; */
-      /* justify-content: center; */
-      /* justify-items: center; */
-      /* padding-top: 30px; */
-      /* padding-bottom: 50px; */
-      /* margin-bottom: 13px; */
     }
     /* [COLORS] */
     
@@ -229,8 +137,165 @@
       color: white;
     }
     
+    #butRight:active,
+    #butLeft:active {
+      background-image: none;
+      background-color: white;
+      color: hsl(237, 63%, 64%);
+      border: 1px solid hsl(237, 63%, 64%);
+    }
+    
+    #butMiddle:active {
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
+    }
+    
     #butMiddle {
       color: hsl(237, 63%, 64%);
+    }
+    
+    .monthlyP {
+      display: none;
+    }
+    
+    @media only screen and (min-width:768px) {
+      .container {
+        background-image: url(images/bg-bottom.svg), url(images/bg-top.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-position: left bottom, right top;
+      }
+      #mainDiv {
+        display: flex;
+        justify-content: center;
+      }
+      #leftDiv,
+      #middleDiv,
+      #rightDiv {
+        width: 30%;
+        text-align: center;
+      }
+      h3 {
+        font-size: 2vw;
+      }
+      #flexSwitchCheckChecked {
+        width: 60px;
+        height: 35px;
+      }
+      #leftDiv,
+      #rightDiv {
+        margin-top: 20px;
+        margin-bottom: 55px;
+        padding-bottom: 20px;
+        padding-top: 30px;
+      }
+      .headP {
+        font-family: Montserrat5;
+        font-weight: 400;
+        font-size: 1.5vw;
+      }
+      .annuallyP,
+      .monthlyP {
+        font-family: Montserrat5;
+        font-size: 5vw;
+        margin-bottom: 15%;
+      }
+      span {
+        font-family: Montserrat5;
+        font-size: 2.8vw;
+        padding-right: 2.5%;
+        vertical-align: 10px;
+      }
+      .contentPLeft,
+      .contentPMiddle,
+      .contentPRight {
+        font-family: Montserrat5;
+        font-size: 1vw;
+      }
+      #butRight,
+      #butLeft,
+      #butMiddle {
+        font-family: Montserrat5;
+        font-size: 1vw;
+        letter-spacing: 1.5px;
+      }
+      #middleDiv {
+        margin-bottom: 35px;
+      }
+      #leftDiv {
+        border-radius: 10px 0px 0px 10px;
+      }
+      #rightDiv {
+        border-radius: 0px 10px 10px 0px;
+      }
+    }
+    
+    @media only screen and (max-width:767px) {
+      .container {
+        background-image: url(images/bg-top.svg);
+        background-repeat: no-repeat;
+        background-position: right top;
+      }
+      #leftDiv,
+      #middleDiv,
+      #rightDiv {
+        width: 100%;
+        text-align: center;
+      }
+      h3 {
+        font-size: 6vw;
+      }
+      #annually,
+      #monthly {
+        font-family: Montserrat5;
+        font-size: 3vw;
+      }
+      #flexSwitchCheckChecked {
+        width: 35px;
+        height: 17px;
+      }
+      #leftDiv,
+      #rightDiv {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border-radius: 10px;
+      }
+      .headP {
+        font-size: 3vw;
+        font-weight: 700;
+      }
+      .annuallyP,
+      .monthlyP {
+        font-family: Montserrat5;
+        font-size: 11vw;
+        margin-bottom: 5%;
+      }
+      span {
+        font-family: Montserrat5;
+        font-size: 6vw;
+        padding-right: 1.5%;
+        vertical-align: 5px;
+      }
+      .contentPLeft,
+      .contentPMiddle,
+      .contentPRight {
+        font-family: Montserrat5;
+        font-size: 3vw;
+      }
+      #butRight,
+      #butLeft,
+      #butMiddle {
+        font-family: Montserrat5;
+        font-size: 3vw;
+        letter-spacing: 1.5px;
+      }
+      #middleDiv {
+        margin-bottom: 15px;
+        margin-top: 15px;
+        padding-bottom: 25px;
+      }
     }
     
     .attribution {
@@ -252,17 +317,17 @@
       <div id="topDiv">
         <h5 id="annually">Annually</h5>
         <div id="checkboxDiv" class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onclick="checkFunction()">
         </div>
         <h5 id="monthly">Monthly</h5>
       </div>
-      <!-- <form id="form-id"> -->
+
       <div id="mainDiv" class="form-group">
         <div id="leftDiv" class="allDiv">
           <p class="headP" id="basic">Basic</p>
-          <!-- <br> -->
-          <h1 class="annuallyP price"><span> &dollar;</span>199.99</h1>
-          <h1 class="monthlyP price"><span> &dollar;</span>19.99</h1>
+
+          <h1 class="annuallyP price" id="annuallyP"><span> &dollar;</span>199.99</h1>
+          <h1 class="monthlyP price" id="monthlyP"><span> &dollar;</span>19.99</h1>
           <hr>
           <p class="contentPLeft">500 GB Storage</p>
           <hr>
@@ -275,8 +340,8 @@
         <div id="middleDiv" class="allDiv">
           <p class="headP" id="professional">Professional</p>
 
-          <h1 class="annuallyP" id="249.99"><span> &dollar;</span>249.99</h1>
-          <h1 class="monthlyP" id="24.99"><span> &dollar;</span>24.99</h1>
+          <h1 class="annuallyP"><span> &dollar;</span>249.99</h1>
+          <h1 class="monthlyP"><span> &dollar;</span>24.99</h1>
           <hr>
           <p class="contentPMiddle">1 TB Storage</p>
           <hr>
@@ -290,8 +355,8 @@
         <div id="rightDiv" class="allDiv">
           <p class="headP" id="master">Master</p>
 
-          <h1 class="annuallyP price" id="399.99"><span> &dollar;</span>399.99</h1>
-          <h1 class="monthlyP price" id="39.99"><span> &dollar;</span>39.99</h1>
+          <h1 class="annuallyP price"><span> &dollar;</span>399.99</h1>
+          <h1 class="monthlyP price"><span> &dollar;</span>39.99</h1>
           <hr>
           <p class="contentPRight">2 TB Storage</p>
           <hr>
@@ -300,19 +365,26 @@
           <p class="contentPRight"> Send up to 20 GB</p>
           <hr>
           <button id="butRight">LEARN MORE</button>
-
         </div>
       </div>
-      <!-- </form> -->
-
-
     </div>
-
   </div>
-
-
-
-
+  <script>
+    function checkFunction() {
+      let checkBox = document.getElementById("flexSwitchCheckChecked");
+      let textMonthly = document.getElementsByClassName("monthlyP");
+      let textAnnually = document.getElementsByClassName("annuallyP");
+      for (let i = 0; i < textMonthly.length; i += 1) {
+        if (checkBox.checked == true) {
+          textMonthly[i].style.display = "block";
+          textAnnually[i].style.display = "none";
+        } else {
+          textMonthly[i].style.display = "none";
+          textAnnually[i].style.display = "block";
+        }
+      }
+    }
+  </script>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Hoda Anwer</a>.
   </div>
